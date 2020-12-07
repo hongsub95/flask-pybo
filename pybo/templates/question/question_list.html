@@ -30,7 +30,7 @@
         {% if question_list %}
         {% for question in question_list.items %}
         <tr>
-            <td>{{ question_list.total - ((question_list.page - 1)*question_list.per_page) - loop.index0 }}</td>
+            <td>{{ ((question_list.page - 1)*question_list.per_page) + loop.index0 + 1 }}</td>
             <td>
                 {% if question.voter|length > 0 %}
                 <span class="badge badge-warning px-2 py-1">{{ question.voter|length }}</span>
